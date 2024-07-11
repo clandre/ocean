@@ -43,7 +43,7 @@ if 'df' in st.session_state:
 show_pages(
     [
         Page("main.py", "Home"),
-        Page("mapa.py", "Expedição"),
+        Page("mapa.py", "Mapas das Expedições"),
         Page("histograma.py", "Histograma"),
         Page("heatmap.py", "Heatmap"),
         Page("dispersao.py", "Dispersão"),
