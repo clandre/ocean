@@ -3,7 +3,11 @@ import pandas as pd
 from st_pages import Page, show_pages, add_page_title
 
 def load_data(uploaded_file):
-    return pd.read_csv(uploaded_file, sep=";", na_values=None)
+    dtype_spec = {
+        9: 'str',
+        19: 'str'
+    }
+    return pd.read_csv(uploaded_file, dtype=dtype_spec, sep=";", na_values=None)
 
 def transformations():
     # Adicionando coluna de profundidade em km
