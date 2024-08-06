@@ -3,5 +3,5 @@ pandas==2.2.2
 jupyter==1.0.0
 matplotlib==3.9.1
 seaborn==0.13.2
-st-pages
-plotly
+st-pages==1.0.0
+plotly==5.23.0
