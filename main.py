@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
-from st_pages import Page, show_pages, add_page_title
+from st_pages import add_page_title, show_pages, Page
+
+st.set_page_config(layout="wide")
 
 def load_data(uploaded_file):
     dtype_spec = {
@@ -13,20 +15,17 @@ def transformations():
     # Adicionando coluna de profundidade em km
     st.session_state.df['Profundidade [km]'] = st.session_state.df['Profundidade [m]'] / 1000
 
-
-
-
-
 # Título do aplicativo
 st.title('Análise de Dados Oceanográficos')
 
 if 'df' not in st.session_state:
-    uploaded_file = st.file_uploader("Escolha um arquivo CSV", type="csv")
-    if uploaded_file is not None:
-        st.session_state.df = load_data(uploaded_file)
-        transformations()
+    # uploaded_file = st.file_uploader("Escolha um arquivo CSV", type="csv")
+    st.session_state.df = load_data("data/Dados.csv")
+    transformations()
 
-
+    # if uploaded_file is not None:
+    #     st.session_state.df = load_data(uploaded_file)
+    #     transformations()
 
 if 'df' in st.session_state:
     st.header('Amostra')
